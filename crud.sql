@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1
--- http://www.phpmyadmin.net
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Feb 21, 2022 at 08:57 AM
--- Server version: 5.7.11
--- PHP Version: 7.0.3
+-- Hôte : 127.0.0.1:3306
+-- Généré le : jeu. 19 déc. 2024 à 07:57
+-- Version du serveur : 8.3.0
+-- Version de PHP : 8.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,50 +18,53 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `crud`
+-- Base de données : `crud`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `liste`
+-- Structure de la table `liste`
 --
 
-CREATE TABLE `liste` (
-  `id` int(10) NOT NULL,
+DROP TABLE IF EXISTS `liste`;
+CREATE TABLE IF NOT EXISTS `liste` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `produit` varchar(200) NOT NULL,
   `prix` varchar(20) NOT NULL,
-  `nombre` int(10) NOT NULL,
-  `actif` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nombre` int NOT NULL,
+  `image_produit` varchar(300) NOT NULL,
+  `actif` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `liste`
+-- Déchargement des données de la table `liste`
 --
 
-INSERT INTO `liste` (`id`, `produit`, `prix`, `nombre`, `actif`) VALUES
-(1, 'produit 1', '42', 108, 1),
-(2, 'produit 2', '32', 33, 1);
+INSERT INTO `liste` (`id`, `produit`, `prix`, `nombre`, `image_produit`, `actif`) VALUES
+(1, 'produit 1', '42', 108, '200x200.png', 1),
+(2, 'produit 2', '32', 33, '200x200.png', 0),
+(3, 'produit ZZ2', '12', 23, '200x200.png', 0),
+(4, 'produit XXXXX', '344', 45, '200x200.png', 0),
+(5, 'produit yop', '344', 34, '200x200A.png', 0),
+(6, 'klhjsdqjkhsd', '23', 12, '200x200A.png', 0),
+(7, 'klhjsdqjkhsd', '23', 12, '200x200A.png', 0),
+(8, 'wxxwwx', '23', 34, '200x200.png', 0),
+(9, 'produit numéro 9', '12', 45, '200x200.png', 0),
+(10, 'gggg', '12', 56, '200x200.png', 0),
+(11, 'Prod ZZZZZZZZZZ Y', '12', 34, '200x200CCCC.png', 0),
+(12, 'PROD IMAGE', '344', 56, '200x200XXXXXX.png', 1),
+(13, 'ww', '56', 87, '200x200.png', 0),
+(14, 'wxxwxw', '78', 89, '200x200A.png', 0),
+(15, 'hjjhjkj', '56', 56666, '200x200CCCC.png', 0),
+(16, 'qsqqs', '12', 34, '200x200.png', 0),
+(17, 'produit WWWW', '347', 67, '200x200CCCC.png', 1),
+(18, 'produit img2', '12', 34, '200x200CCCC.png', 1),
+(19, 'produitimg3', '45', 56, '200x200.png', 1),
+(20, 'produitimg4', '56', 89, '200x200.png', 1);
+COMMIT;
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `liste`
---
-ALTER TABLE `liste`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `liste`
---
-ALTER TABLE `liste`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
